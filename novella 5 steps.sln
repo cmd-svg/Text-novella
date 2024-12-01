@@ -1,25 +1,154 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34330.188
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "novella 5 steps", "novella 5 steps\novella 5 steps.csproj", "{549940D4-EA5B-45AE-AC8A-2583066F61FA}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{549940D4-EA5B-45AE-AC8A-2583066F61FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{549940D4-EA5B-45AE-AC8A-2583066F61FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{549940D4-EA5B-45AE-AC8A-2583066F61FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{549940D4-EA5B-45AE-AC8A-2583066F61FA}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CD76E4B7-B233-4440-B5F3-724C7BBB8F1F}
-	EndGlobalSection
-EndGlobal
+using System;
+
+class TextNovel
+{
+    static void Main(string[] args)
+    {
+        // Шаг 1: Введение
+        Console.WriteLine("Вы просыпаетесь в таинственном лесу.");
+        Console.WriteLine("Перед вами два пути: один ведет в тёмный лес, другой - к светлому холму.");
+        Console.WriteLine("Куда вы хотите пойти? (Введите 1 для тёмного леса, 2 для светлого холма)");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            DarkForest();
+        }
+        else if (choice == "2")
+        {
+            BrightHill();
+        }
+        else
+        {
+            Console.WriteLine("Недостаточно данных для продолжения.");
+        }
+    }
+
+    static void DarkForest()
+    {
+        // Шаг 2: Тёмный лес
+        Console.WriteLine("Вы вошли в тёмный лес. Здесь слышны странные звуки и шорохи.");
+        Console.WriteLine("Вы видите свет вдалеке, но ваши шаги останавливает шорох в кустах.");
+        Console.WriteLine("Что вы хотите сделать? (Введите 1 для того, чтобы подойти к свету, 2 для исследования шороха)");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            ApproachLight();
+        }
+        else if (choice == "2")
+        {
+            InvestigateRustle();
+        }
+        else
+        {
+            Console.WriteLine("Недостаточно данных для продолжения.");
+        }
+    }
+
+    static void BrightHill()
+    {
+        // Шаг 3: Светлый холм
+        Console.WriteLine("Вы поднялись на светлый холм. Здесь красиво!");
+        Console.WriteLine("Вы видите вдалеке маленькую деревню. Также есть таинственное озеро.");
+        Console.WriteLine("Что вы хотите сделать? (Введите 1 для похода в деревню, 2 для озера)");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            Village();
+        }
+        else if (choice == "2")
+        {
+            Lake();
+        }
+        else
+        {
+            Console.WriteLine("Недостаточно данных для продолжения.");
+        }
+    }
+
+    static void ApproachLight()
+    {
+        // Шаг 4: Подход к свету
+        Console.WriteLine("Вы подошли к свету и обнаружили, что это - светлячки.");
+        Console.WriteLine("Но вдруг на вас налетела тень! Это - огромное существо.");
+        Console.WriteLine("Что делать? (Введите 1: сразиться, 2: убежать)");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            Fight();
+        }
+        else if (choice == "2")
+        {
+            Escape();
+        }
+        else
+        {
+            Console.WriteLine("Недостаточно данных для продолжения.");
+        }
+    }
+
+    static void InvestigateRustle()
+    {
+        // Шаг 5: Исследование шороха
+        Console.WriteLine("Вы подошли ближе к шороху и обнаружили, что это маленькое животное.");
+        Console.WriteLine("Оно выглядит испуганным и раненным. Что вы хотите сделать? (Введите 1: помочь, 2: оставить)");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            HelpAnimal();
+        }
+        else if (choice == "2")
+        {
+            LeaveAnimal();
+        }
+        else
+        {
+            Console.WriteLine("Недостаточно данных для продолжения.");
+        }
+    }
+
+    static void Village()
+    {
+        Console.WriteLine("Вы пришли в деревню и найденный вас встретил местный житель...");
+        // Здесь можно добавить больше контента о деревне и продолжении истории.
+    }
+
+    static void Lake()
+    {
+        Console.WriteLine("Вы подошли к озеру и встретили одинокую девушку, которая сидит на берегу...");
+        // Здесь можно добавить больше контента о озере и продолжении истории.
+    }
+
+    static void Fight()
+    {
+        Console.WriteLine("Вы отважно сражаетесь с существом и побеждаете!");
+        // Завершение истории или следующий шаг
+    }
+
+    static void Escape()
+    {
+        Console.WriteLine("Вы успели спастись, но остались с вопросами о ваших приключениях...");
+        // Завершение истории или следующий шаг
+    }
+
+    static void HelpAnimal()
+    {
+        Console.WriteLine("Вы помогли животному, и оно привело вас к скрытому месту с сокровищами!");
+        // Завершение истории или следующий шаг
+    }
+
+    static void LeaveAnimal()
+    {
+        Console.WriteLine("Вы ушли, оставив животное, и вернулись к своим делам...");
+        // Завершение истории или следующий шаг
+    }
+}
